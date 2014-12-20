@@ -1,8 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/** 
+ *   Document   : Menu.java
+ *   Created on : 9-Dec-2014
+ *   Final copy : 20-Dec-2014, 1:02 AM 
+ *   Author     : Behn
+ *   CIS-2232   : Advanced Object Oriented Programming
+ *   Final Project
  */
+
 package menu;
 
 import java.sql.Connection;
@@ -29,6 +33,7 @@ public class Menu {
         this.weeklyMenu = weeklyMenu;
     }
     
+    //set/get methods for SQL are for automated testing.
     public void setSQL(String sql){
         
         this.sql = sql;
@@ -47,6 +52,7 @@ public class Menu {
         weeklyMenu.add(menu);
     }
     
+    //Writes the menu to the DB.
     public void writeMenuToDatabase() throws Exception {
     
         Connection conn = null;
@@ -101,6 +107,7 @@ public class Menu {
         }
     } 
     
+    //Reads the menu from the DB and stores in the "menuDay" ArrayList.
     public void readMenuFromDatabase() throws SQLException {
         
         Connection conn = null;
@@ -126,6 +133,7 @@ public class Menu {
             while (rs.next()) {
                 
                 MenuDay menuDay = new MenuDay();
+                menuDay.setMealDay(rs.getString("ID"));
                 menuDay.setMealName(rs.getString("ITEMNAME"));
                 menuDay.setMealPrice(rs.getString("PRICE"));
                 menuDay.setMealDescription(rs.getString("DESCRIPTION"));
@@ -146,5 +154,12 @@ public class Menu {
             conn.close();
             sql = null;
         }   
+    }
+    
+    //Used to clean out the ArrayList before reloading the ArrayList with the info
+    //on the DB. Helps get rid of entries that shouldn't exist (if they do exist).
+    public void clearWeeklyMenuArray() {
+        
+        weeklyMenu.clear();
     }
 }

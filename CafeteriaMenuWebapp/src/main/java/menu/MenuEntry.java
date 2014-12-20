@@ -1,8 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/** 
+ *   Document   : Menu.java
+ *   Created on : 9-Dec-2014
+ *   Final copy : 20-Dec-2014, 1:02 AM 
+ *   Author     : Behn
+ *   CIS-2232   : Advanced Object Oriented Programming
+ *   Final Project
  */
+
 package menu;
 
 import java.util.ArrayList;
@@ -14,6 +18,10 @@ import javax.validation.constraints.Size;
  * @author Behn
  */
 public class MenuEntry {
+
+    //All of the variables for each of the days. All fields need info entered, except 
+    //for the Allergens field. All variables also have a min and max size (except for
+    //Allergens, which is just a max amount). 
     
     @NotNull
     @Size(min=1, max=50, message="The description must be between {min} and {max} characters.")
@@ -120,12 +128,14 @@ public class MenuEntry {
     @Size(max=50, message="The description must be, at most, {max} characters.")
     private String mealAllergensSaturday;
     
+    //ArrayList for storing 7 MenuDay items (creating a full week of daily menus).
     private ArrayList<MenuDay> weeklyMenu = new ArrayList();
     
     public MenuEntry() {
         
     }
     
+    //Builds the ArrayList of all 7 days using 7 MenuDay objects.
     public void setWeeklyMenu() {
         
         MenuDay sunday = new MenuDay();

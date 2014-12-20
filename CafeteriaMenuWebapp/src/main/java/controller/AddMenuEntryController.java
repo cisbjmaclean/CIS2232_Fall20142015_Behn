@@ -1,3 +1,12 @@
+/** 
+ *   Document   : AddMenuEntryController.java
+ *   Created on : 9-Dec-2014
+ *   Final copy : 20-Dec-2014, 1:02 AM 
+ *   Author     : Behn
+ *   CIS-2232   : Advanced Object Oriented Programming
+ *   Final Project
+ */
+
 package controller;
 
 import menu.Menu;
@@ -13,10 +22,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * Controller for adding the journal entries.
+ * Controller for adding the menu entries.
  *
- * @author bjmaclean
- * @since 20141030
+ * @author Behn McIlwaine
  */
 @Controller
 @RequestMapping("addMenuEntry")
@@ -53,6 +61,10 @@ public class AddMenuEntryController {
             menuEntry.setWeeklyMenu();
             menu.setWeeklyMenu(menuEntry.getWeeklyMenu());
             
+            //DEBUG
+            System.out.print(menuEntry.getWeeklyMenu().toString());
+            System.out.print(menu.getWeeklyMenu().toString());
+            
             if (menuEntry.getWeeklyMenu().isEmpty()) {
                 System.out.println("There were errors");
                 mv = new ModelAndView("addMenu");
@@ -72,6 +84,8 @@ public class AddMenuEntryController {
         //Add a message and the latest journal entries back to the mv before returning it.
         //This will ensure that they are available on the jsp.
         mv.addObject("message", "Menu was added");
+        menu.clearWeeklyMenuArray();
+        menu.readMenuFromDatabase();
         mv.addObject("menu", menu.getWeeklyMenu());
 
         return mv;

@@ -1,7 +1,10 @@
 <%-- 
     Document   : menuEntry
-    Created on : 9-Dec-2014, 10:35:46 PM
+    Created on : 9-Dec-2014
+    Final copy : 20-Dec-2014, 1:02 AM 
     Author     : Behn
+    CIS-2232   : Advanced Object Oriented Programming
+    Final Project
 --%>
 
 <%@page contentType="text/html"%>
@@ -46,7 +49,7 @@
                         <td><form:input path="mealAllergensSunday" />
                         </td>
                     </tr>         
-                </table><br>
+                </table><br><hr><br>
                         
                 <table>
                     <caption>Monday</caption>
@@ -70,7 +73,7 @@
                         <td><form:input path="mealAllergensMonday" />
                         </td>
                     </tr>         
-                </table><br>
+                </table><br><hr><br>
                         
                 <table>
                     <caption>Tuesday</caption>
@@ -94,7 +97,7 @@
                         <td><form:input path="mealAllergensTuesday" />
                         </td>
                     </tr>         
-                </table><br>
+                </table><br><hr><br>
                         
                 <table>
                     <caption>Wednesday</caption>
@@ -118,7 +121,7 @@
                         <td><form:input path="mealAllergensWednesday" />
                         </td>
                     </tr>         
-                </table><br>
+                </table><br><hr><br>
                         
                 <table>
                     <caption>Thursday</caption>
@@ -142,7 +145,7 @@
                         <td><form:input path="mealAllergensThursday" />
                         </td>
                     </tr>         
-                </table><br>
+                </table><br><hr><br>
                         
                 <table>
                     <caption>Friday</caption>
@@ -166,7 +169,7 @@
                         <td><form:input path="mealAllergensFriday" />
                         </td>
                     </tr>         
-                </table><br>
+                </table><br><hr><br>
                         
                 <table>
                     <caption>Saturday</caption>

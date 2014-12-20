@@ -1,0 +1,9 @@
+#surefire
+#Thu Dec 18 21:55:21 AST 2014
+maven.ext.class.path=C\:\\Users\\Behn\\AppData\\Roaming\\NetBeans\\8.0.1\\maven-nblib\\netbeans-eventspy.jar
+user.dir=C\:\\Users\\Behn\\Google Drive\\School\\2nd Year\\1st Semester\\CIS-2232 Advanced Object Oriented Programming PWC\\Final Project\\CafeteriaMenuWebapp
+file.encoding=UTF-8
+localRepository=C\:\\Users\\Behn\\.m2\\repository
+netbeans.deploy=true
+netbeans.deploy.clientUrlPart=/welcome
+basedir=C\:\\Users\\Behn\\Google Drive\\School\\2nd Year\\1st Semester\\CIS-2232 Advanced Object Oriented Programming PWC\\Final Project\\CafeteriaMenuWebapp

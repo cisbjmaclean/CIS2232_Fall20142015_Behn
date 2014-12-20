@@ -1,8 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/** 
+ *   Document   : MenuDay.java
+ *   Created on : 9-Dec-2014
+ *   Final copy : 20-Dec-2014, 1:02 AM 
+ *   Author     : Behn
+ *   CIS-2232   : Advanced Object Oriented Programming
+ *   Final Project
  */
+
 package menu;
 
 import java.util.ArrayList;
@@ -15,6 +19,7 @@ import javax.validation.constraints.Size;
  */
 public class MenuDay {
     
+    private String mealDay;
     private String mealName;
     private String mealPrice;
     private String mealDescription;
@@ -75,6 +80,55 @@ public class MenuDay {
         if(mealAllergens.length() > 0) {
             
             containsAllergens = true;
+        }
+    }
+    
+    public String getMealDay() {
+        
+        determineDay();
+        return mealDay;
+    }
+
+    public void setMealDay(String mealDay) {
+        this.mealDay = mealDay;
+    }
+
+    public boolean isContainsAllergens() {
+        return containsAllergens;
+    }
+
+    public void setContainsAllergens(boolean containsAllergens) {
+        this.containsAllergens = containsAllergens;
+    }
+    
+    //Determines the day, depending on the ID associated with that line in the DB.
+    //When reading from the DB, the ID (a number from 0-6) is seen, and this method
+    //turns it into a readable string. 0 is Sunday, 1 is Monday, and so on.
+    public void determineDay() {
+        
+        switch(Integer.parseInt(mealDay)) {
+            
+            case 0: 
+                mealDay = "Sunday";
+                break;
+            case 1: 
+                mealDay = "Monday";
+                break;
+            case 2: 
+                mealDay = "Tuesday";
+                break;
+            case 3: 
+                mealDay = "Wednesday";
+                break;
+            case 4: 
+                mealDay = "Thursday";
+                break;
+            case 5: 
+                mealDay = "Friday";
+                break;
+            case 6: 
+                mealDay = "Saturday";
+                break;
         }
     }
 }
